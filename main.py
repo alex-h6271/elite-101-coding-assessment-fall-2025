@@ -1,24 +1,30 @@
-from library_books import library_books
 from datetime import datetime, timedelta
 
 # -------- Level 1 --------
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
 
-def display_inventory():
-    for product in library_books:
+def display_books():
+    for book in library_books:
         print("----------------------------")
-        for key, value in product.items():
+        for key, value in book.items():
              print(f"{key}:{value}") 
     print("___________________________")
-
 
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
 # Search should be case-insensitive
 # Return a list of matching books
 
-
+def book_search():
+    search = str(input('Please input the search term (Author or Genre): ')).title()
+    for book in library_books:
+        if book['author'] == search or book['genre'] == search:
+            print("----------------------------")
+            for key, value in book.items():
+                print(f"{key}:{value}") 
+            print("___________________________")
+         
 # -------- Level 3 --------
 # TODO: Create a function to checkout a book by ID
 # If the book is available:
@@ -28,6 +34,8 @@ def display_inventory():
 # If it is not available:
 #   - Print a message saying it's already checked out
 
+def book_checkout():
+    
 
 # -------- Level 4 --------
 # TODO: Create a function to return a book by ID
@@ -51,6 +59,6 @@ def display_inventory():
 
 if __name__ == "__main__":
     # You can use this space to test your functions
-    display_inventory()
+    book_search()
     pass
 
