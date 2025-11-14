@@ -1,8 +1,14 @@
+from library_books import library_books
+
 from datetime import datetime, timedelta
 
 # -------- Level 1 --------
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
+
+# The purpose of this function is as the name
+# suggests, to lopp through the dictionary library_books
+# and to print out its contents.
 
 def display_books():
     for book in library_books:
@@ -16,7 +22,11 @@ def display_books():
 # Search should be case-insensitive
 # Return a list of matching books
 
-def book_search():
+# The purpose of this function is as the name
+# suggests, to allow the user to search the library_books
+# dictionary and print out the matching results.
+
+def search_books():
     search = str(input('Please input the search term (Author or Genre): ')).title()
     for book in library_books:
         if book['author'] == search or book['genre'] == search:
@@ -34,8 +44,8 @@ def book_search():
 # If it is not available:
 #   - Print a message saying it's already checked out
 
-def book_checkout():
-    
+# I honestly tried to get the daterime module working,
+# but was ultimately unable to figure out how to implement it properly.
 
 # -------- Level 4 --------
 # TODO: Create a function to return a book by ID
@@ -57,8 +67,50 @@ def book_checkout():
 # - Save/load catalog to file (CSV or JSON)
 # - Anything else you want to build on top of the system!
 
+def display_menu():
+    print('\n**Very Real Library Inventory System**')
+    print("------------------------------------------")
+        print(f'What would you like to do?')
+    print('1. View Store Inventory')
+    print('2. Search Store Inventory')
+    print('3. Checkout a Book')
+    print('4. Return a Book')
+    print('5. View Overdue Books')
+    print('6. Exit')
+
+def user_selection(login):
+    
+    user = int(input('Please choose a service: '))
+
+    if user == 1:
+        display_books()
+    elif user == 2:
+        search_books()
+    elif user == 3:
+        # This function is currently unavalible
+        # but would allow the user to checkout books
+        print('Checkout a Book')
+    elif user == 4:
+        # This function is currently unavailibe
+        # but would allow the user to return books
+        print('Return a Book')
+    elif user == 5:
+        # This fundtion is currently unavailble
+        # but would allow the user to see overdue books
+        print('View Overdue Books')
+    elif user == 6:
+        print('Exiting program. . .')
+    else:
+        print('That is an invalid Input')
+    
+    return user
+
 if __name__ == "__main__":
     # You can use this space to test your functions
-    book_search()
+user = 0
+
+while user != 6:
+    display_menu(id, login)
+    user = user_selection()
     pass
 
