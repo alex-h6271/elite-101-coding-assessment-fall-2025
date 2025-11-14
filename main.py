@@ -67,10 +67,13 @@ def search_books():
 # - Save/load catalog to file (CSV or JSON)
 # - Anything else you want to build on top of the system!
 
+# I implemented two functions that allow the user to navigate
+# the program through a menu system.
+
 def display_menu():
     print('\n**Very Real Library Inventory System**')
     print("------------------------------------------")
-        print(f'What would you like to do?')
+    print(f'What would you like to do?')
     print('1. View Store Inventory')
     print('2. Search Store Inventory')
     print('3. Checkout a Book')
@@ -78,7 +81,7 @@ def display_menu():
     print('5. View Overdue Books')
     print('6. Exit')
 
-def user_selection(login):
+def user_selection():
     
     user = int(input('Please choose a service: '))
 
@@ -107,10 +110,11 @@ def user_selection(login):
 
 if __name__ == "__main__":
     # You can use this space to test your functions
-user = 0
-
-while user != 6:
-    display_menu(id, login)
-    user = user_selection()
+    user = 0
+    
+    while user != 6:
+        display_menu()
+        user = user_selection()
+        
     pass
 
