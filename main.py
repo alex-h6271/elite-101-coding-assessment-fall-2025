@@ -15,7 +15,7 @@ def display_books():
         print("----------------------------")
         for key, value in book.items():
              print(f"{key}:{value}") 
-    print("___________________________")
+        print("___________________________")
 
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
